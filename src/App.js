@@ -4,6 +4,7 @@ import Education from './components/education';
 import Skill from './components/skill';
 import Banner from './components/banner';
 import Experiences from './components/experiences';
+import Footer from './components/footer';
 import './App.css';
 
 class App extends Component {
@@ -51,6 +52,7 @@ class App extends Component {
         {this.renderSkill()}
         {this.renderEducation()}
         {this.renderExperiences()}
+        <Footer />
       </div>
     );
   }

@@ -1,18 +1,41 @@
 import React, { Component } from 'react';
 import profilePicture from '../assets/img/profile-picture.jpeg';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faGithub from '@fortawesome/fontawesome-free-brands/faGithub';
 import faLinkedinIn from '@fortawesome/fontawesome-free-brands/faLinkedinIn';
 import faDownload from '@fortawesome/fontawesome-free-solid/faDownload';
 import PropTypes from 'prop-types';
 
-export default class Profile extends Component { 
+export default class Profile extends Component {
+    constructor(){
+        super();
+        this.state = {
+            isHovered:false
+        }
+        this.hoverOn = this.hoverOn.bind(this);
+        this.hoverOff = this.hoverOff.bind(this);
+    }
+
+
+    hoverOn(){
+        console.log('Hover on');
+        this.setState({ isHovered: true });
+    }
+
+    hoverOff(){
+        console.log('Hover off');
+        this.setState({ isHovered: false });    
+    }
+
     render() {
         return (
             <div className="section-container profile-container">
                 {/* My picture */}
                 <div className="profile-picture-container">
-                    <a className="profile-download" href=""><FontAwesomeIcon icon={faDownload} size="1x" /></a>
+                    <div className={this.state.isHovered ? "profile-popup popup-active" : "profile-popup"}>
+                        <p>Télécharger mon CV</p>
+                    </div>
+                    <a className="profile-download" href="" onMouseEnter={this.hoverOn} onMouseLeave={this.hoverOff}><FontAwesomeIcon icon={faDownload} size="1x" /></a>
                     <img src={profilePicture} alt="Photo de profil" />
                     <p className="profile-name">{this.props.name}</p>
                     <p className="profile-title">{this.props.title}</p>
