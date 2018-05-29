@@ -1,36 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
+import * as Scroll from 'react-scroll';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faAngleUp from '@fortawesome/fontawesome-free-solid/faAngleUp';
 
-export default class Footer extends Component {
+const Footer = {
+  render() {
+    return (
+      <div className="footer">
+        <FontAwesomeIcon className="footer-round-button" onClick={Scroll.animateScroll.scrollToTop()} icon={faAngleUp} size="2x" />
+        <p>
+          mbrillaxis ©.
+        </p>
+      </div>
+    );
+  },
+};
 
-    constructor() {
-        super();
-        this.state = {
-            scrollTop: 0
-        }
-    }
-
-    componentWillMount(){
-        window.addEventListener('scroll', this.handleScroll);
-    }
-
-    componentWillUnmount(){
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-
-    handleScroll() {
-        this.setState({scrollTop: (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0)});
-    }
-
-    render() {
-        return (
-            <div className="footer">
-                <a href="" className="footer-round-button"><FontAwesomeIcon icon={faAngleUp} size="2x" /></a>
-                <p>
-                    mbrillaxis ©.
-                </p>
-            </div>
-        );
-    }
-}
+export default Footer;

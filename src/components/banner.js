@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Banner extends Component { 
-    render() {
-        return (
-            <div className="banner">
-                <div className="overlay-container"></div>
-            </div>
-        );
-    }
-}
+const Banner = {
+  render() {
+    return (
+      <div className="banner">
+        <div className="overlay-container" />
+      </div>
+    );
+  },
+};
+
+export default Banner;
