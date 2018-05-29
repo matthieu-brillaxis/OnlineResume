@@ -1,6 +1,5 @@
 import React from 'react';
 import * as Scroll from 'react-scroll';
-import { animateScroll } from 'react-scroll';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faAngleUp from '@fortawesome/fontawesome-free-solid/faAngleUp';
 
