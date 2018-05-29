@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import PropTypes from 'prop-types';
-import TimelineItem from './elements/timelineItem';
+import TimelineItem from './elements/TimelineItem';
 
 export default class Education extends PureComponent {
-  renderTimeline() {
+  renderTimeline = () => {
     const { educationList } = this.props;
     return (
       educationList.map(element => <TimelineItem key={element.id} element={element} />)

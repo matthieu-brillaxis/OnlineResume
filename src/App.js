@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Profile from './components/profile';
-import Education from './components/education';
-import Skill from './components/skill';
-import Banner from './components/banner';
-import Experiences from './components/experiences';
-import Footer from './components/footer';
+import Profile from './components/Profile';
+import Education from './components/Education';
+import Skill from './components/Skill';
+import Banner from './components/Banner';
+import Experience from './components/Experience';
+import Footer from './components/Footer';
 import './App.css';
 
 class App extends Component {
@@ -40,7 +40,7 @@ class App extends Component {
   renderExperiences() {
     if (this.props.experiences) {
       return (
-        <Experiences {...this.props.experiences} />
+        <Experience {...this.props.experiences} />
       );
     }
   }

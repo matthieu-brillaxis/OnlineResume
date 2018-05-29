@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 import { VerticalTimeline } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import PropTypes from 'prop-types';
-import TimelineItem from './elements/timelineItem';
+import TimelineItem from './elements/TimelineItem';
 
-export default class Experiences extends PureComponent {
-  renderTimeline() {
+export default class Experience extends PureComponent {
+  renderTimeline = () => {
     const { experiencesList } = this.props;
     return (
       experiencesList.map(element => <TimelineItem key={element.id} element={element} />)
@@ -25,7 +25,7 @@ export default class Experiences extends PureComponent {
   }
 }
 
-Experiences.propTypes = {
+Experience.propTypes = {
   experiencesList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
