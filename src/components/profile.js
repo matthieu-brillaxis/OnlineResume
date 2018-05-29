@@ -11,19 +11,17 @@ import CV from '../assets/files/cv.pdf';
 export default class Profile extends Component {
   constructor() {
     super();
+
     this.state = {
       isHovered: false,
     };
-    this.hoverOn = this.hoverOn.bind(this);
-    this.hoverOff = this.hoverOff.bind(this);
   }
 
-
-  hoverOn() {
+  hoverOn = () => {
     this.setState({ isHovered: true });
   }
 
-  hoverOff() {
+  hoverOff = () => {
     this.setState({ isHovered: false });
   }
 
