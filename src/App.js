@@ -9,6 +9,10 @@ import Footer from './components/Footer';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    document.title = 'Matthieu Brillaxis CV';
+  }
+
   // Function to render profile section if there is data
   renderProfile() {
     if (this.props.profile) {

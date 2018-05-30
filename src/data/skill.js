@@ -1,35 +1,43 @@
 const skill = {
   skillList: [
     {
-      type: 'Javascript',
+      type: 'Front',
+      name: 'Javascript',
       level: 90,
     },
     {
-      type: 'Cordova',
+      type: 'Mobile',
+      name: 'Cordova',
       level: 90,
     },
     {
-      type: 'React',
+      type: 'Front',
+      name: 'React',
       level: 70,
     },
     {
-      type: 'React native',
+      type: 'Mobile',
+      name: 'React native',
       level: 70,
     },
     {
-      type: 'PHP',
+      type: 'Back',
+      name: 'PHP',
       level: 50,
     },
     {
-      type: 'Laravel',
+      type: 'Back',
+      name: 'Laravel',
       level: 50,
     },
     {
-      type: 'VueJS',
+      type: 'Front',
+      name: 'VueJS',
       level: 40,
     },
     {
-      type: 'Docker',
+      type: 'DevOps',
+      name: 'Docker',
       level: 40,
     },
   ],

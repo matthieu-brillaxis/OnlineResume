@@ -15,7 +15,12 @@ export default class TimelineItem extends PureComponent {
       >
         <h3 className="vertical-timeline-element-title">{element.name}</h3>
         <a className="vertical-timeline-element-subtitle" href={element.website}>{element.website}</a>
-        <p>{element.type}</p>
+        {element.degree &&
+          <p>{element.degree}</p>
+        }
+        {element.type &&
+          <p>{element.type}</p>
+        }
       </VerticalTimelineElement>
     );
   }
