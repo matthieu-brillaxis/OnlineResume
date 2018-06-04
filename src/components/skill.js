@@ -8,20 +8,20 @@ export default class Skill extends Component {
     super(props);
 
     this.state = {
-      skillList: this.props,
+      filteredValue: 'Tous',
     };
   }
 
-  // Func used into skill filter to select good skills
-  // filter= (value) => {
-  //   this.state.skillList.map(element => (
-  //     element.type === value ? this.state.skillList.element.active = true : this.state.skillList.active = false
-  //   ));
-  // }
+  handleFilter = (value) => {
+    this.setState({ filteredValue: value });
+  }
 
-  // Func to render all skills
   renderSkills = () => {
-    this.state.skillList.map(element => <SkillCard key={element.id} element={element} />);
+    const { skillList } = this.props;
+    const { filteredValue } = this.state;
+    return (
+      skillList.map(element => <SkillCard key={element.id} element={element} active={element.type === filteredValue || filteredValue === 'Tous'} />)
+    );
   }
 
   render() {
@@ -30,11 +30,11 @@ export default class Skill extends Component {
         <h2 className="section-title">Mes compétences</h2>
         <div className="skill-container">
           <ul className="skill-filter-container">
-            <Filter title="Tous" />
-            <Filter title="Front" />
-            <Filter title="Back" />
-            <Filter title="Mobile" />
-            <Filter title="Autre" />
+            <Filter title="Tous" active={this.state.filteredValue === 'Tous' ? 'active' : 'default'} filter={() => this.handleFilter('Tous')} />
+            <Filter title="Front" active={this.state.filteredValue === 'Front' ? 'active' : 'default'} filter={() => this.handleFilter('Front')} />
+            <Filter title="Back" active={this.state.filteredValue === 'Back' ? 'active' : 'default'} filter={() => this.handleFilter('Back')} />
+            <Filter title="Mobile" active={this.state.filteredValue === 'Mobile' ? 'active' : 'default'} filter={() => this.handleFilter('Mobile')} />
+            <Filter title="Autre" active={this.state.filteredValue === 'Autre' ? 'active' : 'default'} filter={() => this.handleFilter('Autre')} />
           </ul>
           <div className="skill-result-container">
             {this.renderSkills()}
@@ -51,11 +51,4 @@ Skill.propTypes = {
     name: PropTypes.string.isRequired,
     level: PropTypes.number.isRequired,
   })).isRequired,
-  barColors: PropTypes.shape({
-    bar: PropTypes.string,
-    title: PropTypes.shape({
-      text: PropTypes.string,
-      background: PropTypes.string,
-    }),
-  }).isRequired,
 };

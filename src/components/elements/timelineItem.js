@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 export default class TimelineItem extends PureComponent {
   render() {
     const { element } = this.props;
+
     return (
       <VerticalTimelineElement
         className="timeline-element vertical-timeline-element--work"
@@ -18,8 +19,14 @@ export default class TimelineItem extends PureComponent {
         {element.degree &&
           <p>{element.degree}</p>
         }
-        {element.type &&
+        {element.type && element.format &&
+          <p>{element.type} - {element.format}</p>
+        }
+        {element.type && !element.format &&
           <p>{element.type}</p>
+        }
+        {element.competence &&
+          <p>{element.competence}</p>
         }
       </VerticalTimelineElement>
     );

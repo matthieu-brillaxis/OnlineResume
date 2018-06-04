@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class Filter extends PureComponent {
   render() {
     return (
-      <li className="skill-filter"><button onClick={this.props.filter(this.props.title)}>{ this.props.title }</button></li>
+      <li className={`skill-filter ${this.props.active}`}><button onClick={this.props.filter}>{ this.props.title }</button></li>
     );
   }
 }
@@ -13,5 +13,6 @@ export default class Filter extends PureComponent {
 Filter.propTypes = {
   title: PropTypes.string.isRequired,
   filter: PropTypes.func.isRequired,
+  active: PropTypes.string.isRequired,
 };
 
